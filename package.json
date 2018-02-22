@@ -1,0 +1,52 @@
+{
+  "name": "ipfs-pubsub-chat-example",
+  "version": "0.0.0",
+  "description": "An example pubsub app that uses window.ipfs, provided by the IPFS Companion web extension",
+  "main": "dist/index.html",
+  "scripts": {
+    "start": "ecstatic src",
+    "clean": "shx rm -rf dist",
+    "build": "run-s build:*",
+    "build:copy": "run-p build:copy:*",
+    "build:copy:html": "shx mkdir -p dist && shx cp src/index.html dist/index.html",
+    "build:copy:ipfs-css": "run-p build:copy:ipfs-css:*",
+    "build:copy:ipfs-css:css": "shx mkdir -p dist && shx cp node_modules/ipfs-css/ipfs.css dist",
+    "build:copy:ipfs-css:fonts": "shx mkdir -p dist/fonts && shx cp node_modules/ipfs-css/fonts/* dist/fonts",
+    "build:copy:tachyons": "shx mkdir -p dist && shx cp node_modules/tachyons/css/tachyons.css dist",
+    "build:js": "browserify -g uglifyify src/index.js -o dist/bundle.js",
+    "test": "standard"
+  },
+  "keywords": [
+    "ipfs",
+    "pubsub",
+    "chat",
+    "example",
+    "demo",
+    "publish",
+    "subscribe"
+  ],
+  "author": "Alan Shaw",
+  "license": "MIT",
+  "dependencies": {
+    "cbor": "^4.0.0",
+    "choo": "^6.8.0",
+    "ipfs-css": "^0.2.0",
+    "tachyons": "^4.9.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.1.0",
+    "npm-run-all": "^4.1.2",
+    "shx": "^0.2.2",
+    "standard": "^11.0.0",
+    "uglifyify": "^4.0.5",
+    "watchify": "^3.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tableflip/ipfs-pubsub-chat-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tableflip/ipfs-pubsub-chat-example/issues"
+  },
+  "homepage": "https://github.com/tableflip/ipfs-pubsub-chat-example#readme"
+}
