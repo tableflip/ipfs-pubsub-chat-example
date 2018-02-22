@@ -14,7 +14,7 @@ function createChatStore () {
     state.error = null
 
     const onMessage = async (msg) => {
-      const exists = state.messages.some(m => m.seqno.equals(msg.seqno))
+      const exists = state.messages.some(m => m.seqno.equals(Buffer.from(msg.seqno)))
       if (exists) return
 
       try {

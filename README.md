@@ -28,4 +28,4 @@
 
 4. Install dependencies `npm install`
 5. Build the app `npm run build`
-6. In IPFS companion, open "Share files via IPFS" and drop the `dist/` folder onto the browser tab
+6. Start the app `npm start`

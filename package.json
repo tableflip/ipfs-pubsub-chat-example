@@ -4,7 +4,7 @@
   "description": "An example pubsub app that uses window.ipfs, provided by the IPFS Companion web extension",
   "main": "dist/index.html",
   "scripts": {
-    "start": "ecstatic src",
+    "start": "ecstatic dist",
     "clean": "shx rm -rf dist",
     "build": "run-s build:*",
     "build:copy": "run-p build:copy:*",
@@ -30,6 +30,7 @@
   "dependencies": {
     "cbor": "^4.0.0",
     "choo": "^6.8.0",
+    "ecstatic": "^3.2.0",
     "ipfs-css": "^0.2.0",
     "tachyons": "^4.9.1"
   },
