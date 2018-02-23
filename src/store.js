@@ -1,6 +1,5 @@
 'use strict'
 
-const cbor = require('cbor')
 const TOPIC = 'chat'
 
 function createChatStore () {
@@ -13,13 +12,15 @@ function createChatStore () {
     state.subscribed = false
     state.error = null
 
-    const onMessage = async (msg) => {
+    const onMessage = (msg) => {
+      msg = Object.assign({}, msg)
+
       const exists = state.messages.some(m => m.seqno.equals(Buffer.from(msg.seqno)))
       if (exists) return
 
       try {
         msg.seqno = Buffer.from(msg.seqno)
-        msg.data = await cbor.decodeFirst(msg.data)
+        msg.data = JSON.parse(msg.data)
       } catch (err) {
         return console.warn('Invalid message data', err)
       }
@@ -66,8 +67,7 @@ function createChatStore () {
 
       try {
         const { name, text } = state
-        const data = cbor.encode({ name, text })
-        await window.ipfs.pubsub.publish(TOPIC, data)
+        await window.ipfs.pubsub.publish(TOPIC, Buffer.from(JSON.stringify({ name, text })))
         state.text = ''
       } catch (err) {
         console.error('Failed to publish', err)

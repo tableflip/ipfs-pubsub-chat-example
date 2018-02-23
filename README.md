@@ -1,6 +1,6 @@
 # IPFS pubsub chat example
 
-> An example pubsub app that uses window.ipfs, provided by the IPFS Companion web extension
+> A ~76KB example chat app that uses window.ipfs, provided by the IPFS Companion web extension
 
 ## Install
 

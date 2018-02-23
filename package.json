@@ -1,7 +1,7 @@
 {
   "name": "ipfs-pubsub-chat-example",
   "version": "0.0.0",
-  "description": "An example pubsub app that uses window.ipfs, provided by the IPFS Companion web extension",
+  "description": "A ~76KB example chat app that uses window.ipfs, provided by the IPFS Companion web extension",
   "main": "dist/index.html",
   "scripts": {
     "start": "ecstatic dist",
@@ -28,7 +28,6 @@
   "author": "Alan Shaw",
   "license": "MIT",
   "dependencies": {
-    "cbor": "^4.0.0",
     "choo": "^6.8.0",
     "ecstatic": "^3.2.0",
     "ipfs-css": "^0.2.0",
