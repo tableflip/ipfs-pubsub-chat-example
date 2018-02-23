@@ -1,6 +1,6 @@
 {
   "name": "ipfs-pubsub-chat-example",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A ~76KB example chat app that uses window.ipfs, provided by the IPFS Companion web extension",
   "main": "dist/index.html",
   "scripts": {
