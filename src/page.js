@@ -4,8 +4,8 @@ const html = require('choo/html')
 
 function createChatPage (i18n) {
   return function chatPage (state, emit) {
-    const onNameChange = (e) => emit('nameChange', e.target.value)
-    const onTextChange = (e) => emit('textChange', e.target.value)
+    const onNameInput = (e) => emit('nameChange', e.target.value)
+    const onTextInput = (e) => emit('textChange', e.target.value)
     const onTextKeyDown = (e) => {
       if (e.which === 13 || e.keyCode === 13) {
         emit('postMessage')
@@ -26,11 +26,11 @@ function createChatPage (i18n) {
         <div class="mw8 center ph2 ph3-l">
           <div class="mb3">
             <label for="name" class="db pb2 w-100 fw2 tracked ttu f5 teal">Name</label>
-            <input id="name" type="text" class="f6 db w-100 ph1 pv2 ba border-gray-muted monospace" value=${name} oninput=${onNameChange} />
+            <input id="name" type="text" class="f6 db w-100 ph1 pv2 ba border-gray-muted monospace" value=${name} oninput=${onNameInput} />
           </div>
           <div class="mb3">
             <label for="text" class="db pb2 w-100 fw2 tracked ttu f5 teal">Message</label>
-            <textarea id="text" class="f6 db w-100 ph1 pv2 ba border-gray-muted monospace" rows="2" oninput=${onTextChange} onkeydown=${onTextKeyDown}>${text}</textarea>
+            <textarea id="text" class="f6 db w-100 ph1 pv2 ba border-gray-muted monospace" rows="2" oninput=${onTextInput} onkeydown=${onTextKeyDown}>${text}</textarea>
           </div>
           <div class="mb4 tr">
             ${posting || !subscribed
