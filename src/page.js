@@ -2,7 +2,7 @@
 
 const html = require('choo/html')
 
-function createChatPage (i18n) {
+function createChatPage () {
   return function chatPage (state, emit) {
     const onNameInput = (e) => emit('nameChange', e.target.value)
     const onTextInput = (e) => emit('textChange', e.target.value)
