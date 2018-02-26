@@ -42,7 +42,7 @@ function createChatStore () {
       try {
         state.id = await window.ipfs.id()
       } catch (err) {
-        console.error('Failed to get node ID')
+        console.error('Failed to get node ID', err)
       }
 
       emitter.emit('render')
