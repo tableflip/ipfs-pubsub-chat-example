@@ -2,6 +2,8 @@
 
 > A ~76KB example chat app that uses window.ipfs, provided by the IPFS Companion web extension
 
+Demo: https://tableflip.github.io/ipfs-pubsub-chat-example/dist/
+
 <img width="752" alt="screen shot of IPFS pubsub chat example" src="https://user-images.githubusercontent.com/152863/36670485-744ca964-1af0-11e8-82f9-a591a90522a3.png">
 
 ## Install
