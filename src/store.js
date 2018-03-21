@@ -30,19 +30,24 @@ function createChatStore () {
     }
 
     emitter.on('DOMContentLoaded', async () => {
-      try {
-        await window.ipfs.pubsub.subscribe(TOPIC, onMessage)
-        state.subscribed = true
-      } catch (err) {
-        console.error('Failed to subscribe', err)
-        state.subscribed = false
-        state.error = err
-      }
+      if (window.ipfs) {
+        try {
+          await window.ipfs.pubsub.subscribe(TOPIC, onMessage)
+          state.subscribed = true
+        } catch (err) {
+          console.error('Failed to subscribe', err)
+          state.subscribed = false
+          state.error = err
+        }
 
-      try {
-        state.id = await window.ipfs.id()
-      } catch (err) {
-        console.error('Failed to get node ID', err)
+        try {
+          state.id = await window.ipfs.id()
+        } catch (err) {
+          console.error('Failed to get node ID', err)
+        }
+      } else {
+        state.subscribed = false
+        state.error = new Error('window.ipfs is not available, install IPFS Companion!')
       }
 
       emitter.emit('render')
