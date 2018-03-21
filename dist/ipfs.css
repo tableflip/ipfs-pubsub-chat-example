@@ -1,0 +1,375 @@
+/* _|   _ \   __|    __|
+  |    __/   _|   \__ \        _|  (_-<  (_-<
+___|  _|    _|    ____/  _)  \__|  ___/  ___/
+
+See: https://github.com/ipfs-shipyard/ipfs-css
+*/
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 400;
+  src: local('Inter UI'), local('InterUI-Regular'), url("fonts/Inter-UI-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 400;
+  src: local('Inter UI Italic'), local('InterUI-Italic'), url("fonts/Inter-UI-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 500;
+  src: local('Inter UI Medium'), local('InterUI-Medium'), url("fonts/Inter-UI-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 500;
+  src: local('Inter UI Medium Italic'), local('InterUI-MediumItalic'), url("fonts/Inter-UI-MediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 700;
+  src: local('Inter UI Bold'), local('InterUI-Bold'), url("fonts/Inter-UI-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 700;
+  src: local('Inter UI Bold Italic'), local('InterUI-BoldItalic'), url("fonts/Inter-UI-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Montserrat Light'), local('Montserrat-Light'), url('fonts/Montserrat-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Montserrat Light Italic'), local('Montserrat-LightItalic'), url('fonts/Montserrat-LightItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url('fonts/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Montserrat Italic'), local('Montserrat-Italic'), url('fonts/Montserrat-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url('fonts/Montserrat-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Montserrat SemiBold Italic'), local('Montserrat-SemiBoldItalic'), url('fonts/Montserrat-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url('fonts/Montserrat-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Montserrat Bold Italic'), local('Montserrat-BoldItalic'), url('fonts/Montserrat-BoldItalic.woff2') format('woff2');
+}
+
+/* IPFS theme.css - Generated from https://github.com/ipfs-shipyard/ipfs-css/blob/master/theme.json */
+
+/* ---- font ----- */
+
+.sans-serif { font-family: 'Inter UI', system-ui, sans-serif; }
+
+.montserrat { font-family: 'Montserrat', 'Verdana', system-ui, sans-serif; }
+
+.monospace { font-family: Consolas, monaco, monospace; }
+
+/* ---- color ----- */
+
+.navy { color: #0b3a53; }
+
+.navy-muted { color: #244e66; }
+
+.aqua { color: #69c4cd; }
+
+.aqua-muted { color: #9ad4db; }
+
+.gray { color: #b7bbc8; }
+
+.gray-muted { color: #d9dbe2; }
+
+.charcoal { color: #34373f; }
+
+.charcoal-muted { color: #7f8491; }
+
+.red { color: #ea5037; }
+
+.red-muted { color: #f36149; }
+
+.yellow { color: #f39021; }
+
+.yellow-muted { color: #f9a13e; }
+
+.teal { color: #3e9096; }
+
+.teal-muted { color: #439a9d; }
+
+.green { color: #0cb892; }
+
+.green-muted { color: #0aca9f; }
+
+.snow { color: #edf0f4; }
+
+.snow-muted { color: #f7f8fa; }
+
+.bg-navy { background-color: #0b3a53; }
+
+.bg-navy-muted { background-color: #244e66; }
+
+.bg-aqua { background-color: #69c4cd; }
+
+.bg-aqua-muted { background-color: #9ad4db; }
+
+.bg-gray { background-color: #b7bbc8; }
+
+.bg-gray-muted { background-color: #d9dbe2; }
+
+.bg-charcoal { background-color: #34373f; }
+
+.bg-charcoal-muted { background-color: #7f8491; }
+
+.bg-red { background-color: #ea5037; }
+
+.bg-red-muted { background-color: #f36149; }
+
+.bg-yellow { background-color: #f39021; }
+
+.bg-yellow-muted { background-color: #f9a13e; }
+
+.bg-teal { background-color: #3e9096; }
+
+.bg-teal-muted { background-color: #439a9d; }
+
+.bg-green { background-color: #0cb892; }
+
+.bg-green-muted { background-color: #0aca9f; }
+
+.bg-snow { background-color: #edf0f4; }
+
+.bg-snow-muted { background-color: #f7f8fa; }
+
+.hover-navy:hover { color: #0b3a53; }
+
+.hover-navy-muted:hover { color: #244e66; }
+
+.hover-aqua:hover { color: #69c4cd; }
+
+.hover-aqua-muted:hover { color: #9ad4db; }
+
+.hover-gray:hover { color: #b7bbc8; }
+
+.hover-gray-muted:hover { color: #d9dbe2; }
+
+.hover-charcoal:hover { color: #34373f; }
+
+.hover-charcoal-muted:hover { color: #7f8491; }
+
+.hover-red:hover { color: #ea5037; }
+
+.hover-red-muted:hover { color: #f36149; }
+
+.hover-yellow:hover { color: #f39021; }
+
+.hover-yellow-muted:hover { color: #f9a13e; }
+
+.hover-teal:hover { color: #3e9096; }
+
+.hover-teal-muted:hover { color: #439a9d; }
+
+.hover-green:hover { color: #0cb892; }
+
+.hover-green-muted:hover { color: #0aca9f; }
+
+.hover-snow:hover { color: #edf0f4; }
+
+.hover-snow-muted:hover { color: #f7f8fa; }
+
+.hover-bg-navy:hover { background-color: #0b3a53; }
+
+.hover-bg-navy-muted:hover { background-color: #244e66; }
+
+.hover-bg-aqua:hover { background-color: #69c4cd; }
+
+.hover-bg-aqua-muted:hover { background-color: #9ad4db; }
+
+.hover-bg-gray:hover { background-color: #b7bbc8; }
+
+.hover-bg-gray-muted:hover { background-color: #d9dbe2; }
+
+.hover-bg-charcoal:hover { background-color: #34373f; }
+
+.hover-bg-charcoal-muted:hover { background-color: #7f8491; }
+
+.hover-bg-red:hover { background-color: #ea5037; }
+
+.hover-bg-red-muted:hover { background-color: #f36149; }
+
+.hover-bg-yellow:hover { background-color: #f39021; }
+
+.hover-bg-yellow-muted:hover { background-color: #f9a13e; }
+
+.hover-bg-teal:hover { background-color: #3e9096; }
+
+.hover-bg-teal-muted:hover { background-color: #439a9d; }
+
+.hover-bg-green:hover { background-color: #0cb892; }
+
+.hover-bg-green-muted:hover { background-color: #0aca9f; }
+
+.hover-bg-snow:hover { background-color: #edf0f4; }
+
+.hover-bg-snow-muted:hover { background-color: #f7f8fa; }
+
+.fill-navy path { fill: #0b3a53; }
+
+.fill-navy-muted path { fill: #244e66; }
+
+.fill-aqua path { fill: #69c4cd; }
+
+.fill-aqua-muted path { fill: #9ad4db; }
+
+.fill-gray path { fill: #b7bbc8; }
+
+.fill-gray-muted path { fill: #d9dbe2; }
+
+.fill-charcoal path { fill: #34373f; }
+
+.fill-charcoal-muted path { fill: #7f8491; }
+
+.fill-red path { fill: #ea5037; }
+
+.fill-red-muted path { fill: #f36149; }
+
+.fill-yellow path { fill: #f39021; }
+
+.fill-yellow-muted path { fill: #f9a13e; }
+
+.fill-teal path { fill: #3e9096; }
+
+.fill-teal-muted path { fill: #439a9d; }
+
+.fill-green path { fill: #0cb892; }
+
+.fill-green-muted path { fill: #0aca9f; }
+
+.fill-snow path { fill: #edf0f4; }
+
+.fill-snow-muted path { fill: #f7f8fa; }
+
+.hover-fill-navy:hover path { fill: #0b3a53; }
+
+.hover-fill-navy-muted:hover path { fill: #244e66; }
+
+.hover-fill-aqua:hover path { fill: #69c4cd; }
+
+.hover-fill-aqua-muted:hover path { fill: #9ad4db; }
+
+.hover-fill-gray:hover path { fill: #b7bbc8; }
+
+.hover-fill-gray-muted:hover path { fill: #d9dbe2; }
+
+.hover-fill-charcoal:hover path { fill: #34373f; }
+
+.hover-fill-charcoal-muted:hover path { fill: #7f8491; }
+
+.hover-fill-red:hover path { fill: #ea5037; }
+
+.hover-fill-red-muted:hover path { fill: #f36149; }
+
+.hover-fill-yellow:hover path { fill: #f39021; }
+
+.hover-fill-yellow-muted:hover path { fill: #f9a13e; }
+
+.hover-fill-teal:hover path { fill: #3e9096; }
+
+.hover-fill-teal-muted:hover path { fill: #439a9d; }
+
+.hover-fill-green:hover path { fill: #0cb892; }
+
+.hover-fill-green-muted:hover path { fill: #0aca9f; }
+
+.hover-fill-snow:hover path { fill: #edf0f4; }
+
+.hover-fill-snow-muted:hover path { fill: #f7f8fa; }
+
+.border-navy { border-color: #0b3a53; }
+
+.border-navy-muted { border-color: #244e66; }
+
+.border-aqua { border-color: #69c4cd; }
+
+.border-aqua-muted { border-color: #9ad4db; }
+
+.border-gray { border-color: #b7bbc8; }
+
+.border-gray-muted { border-color: #d9dbe2; }
+
+.border-charcoal { border-color: #34373f; }
+
+.border-charcoal-muted { border-color: #7f8491; }
+
+.border-red { border-color: #ea5037; }
+
+.border-red-muted { border-color: #f36149; }
+
+.border-yellow { border-color: #f39021; }
+
+.border-yellow-muted { border-color: #f9a13e; }
+
+.border-teal { border-color: #3e9096; }
+
+.border-teal-muted { border-color: #439a9d; }
+
+.border-green { border-color: #0cb892; }
+
+.border-green-muted { border-color: #0aca9f; }
+
+.border-snow { border-color: #edf0f4; }
+
+.border-snow-muted { border-color: #f7f8fa; }
+
+.ipfs-gradient-0 { background-image: linear-gradient(to top, #041727 0%,#043b55 100%); }
+
+.transition-all {
+  transition: .2s ease all;
+}
+
