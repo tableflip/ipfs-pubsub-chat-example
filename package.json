@@ -31,7 +31,8 @@
     "choo": "^6.8.0",
     "ecstatic": "^3.2.0",
     "ipfs-css": "^0.2.0",
-    "tachyons": "^4.9.1"
+    "tachyons": "^4.9.1",
+    "window.ipfs-fallback": "^1.1.0"
   },
   "devDependencies": {
     "browserify": "^16.1.0",

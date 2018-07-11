@@ -1,9 +1,13 @@
 'use strict'
 
+const getIpfs = require('ipfs-fallback')
+
 const TOPIC = 'chat'
 
 function createChatStore () {
   return function chatStore (state, emitter) {
+    let ipfs
+
     state.id = null
     state.name = window.localStorage.getItem('name') || 'anonymous coward'
     state.text = ''
@@ -30,24 +34,35 @@ function createChatStore () {
     }
 
     emitter.on('DOMContentLoaded', async () => {
-      if (window.ipfs) {
-        try {
-          await window.ipfs.pubsub.subscribe(TOPIC, onMessage)
-          state.subscribed = true
-        } catch (err) {
-          console.error('Failed to subscribe', err)
-          state.subscribed = false
-          state.error = err
+      ipfs = await getIpfs({
+        ipfs: {
+          config: {
+            Addresses: {
+              Swarm: [
+                '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star'
+              ]
+            }
+          },
+          EXPERIMENTAL: {
+            pubsub: true
+          }
         }
+      })
 
-        try {
-          state.id = await window.ipfs.id()
-        } catch (err) {
-          console.error('Failed to get node ID', err)
-        }
-      } else {
+      try {
+        await ipfs.pubsub.subscribe(TOPIC, onMessage)
+        state.subscribed = true
+      } catch (err) {
+        console.error('Failed to subscribe', err)
         state.subscribed = false
-        state.error = new Error('window.ipfs is not available, install IPFS Companion!')
+        state.error = err
+      }
+
+      try {
+        state.id = await ipfs.id()
+      } catch (err) {
+        console.error('Failed to get node ID', err)
+        state.error = err
       }
 
       emitter.emit('render')
@@ -72,7 +87,7 @@ function createChatStore () {
 
       try {
         const { name, text } = state
-        await window.ipfs.pubsub.publish(TOPIC, Buffer.from(JSON.stringify({ name, text })))
+        await ipfs.pubsub.publish(TOPIC, Buffer.from(JSON.stringify({ name, text })))
         state.text = ''
       } catch (err) {
         console.error('Failed to publish', err)
@@ -83,7 +98,7 @@ function createChatStore () {
       emitter.emit('render')
     })
 
-    window.addEventListener('unload', () => window.ipfs.pubsub.unsubscribe(TOPIC, onMessage))
+    window.addEventListener('unload', () => ipfs.pubsub.unsubscribe(TOPIC, onMessage))
   }
 }
 
