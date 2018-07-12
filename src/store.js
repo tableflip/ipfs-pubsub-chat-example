@@ -1,6 +1,6 @@
 'use strict'
 
-const getIpfs = require('ipfs-fallback')
+const getIpfs = require('window.ipfs-fallback')
 
 const TOPIC = 'chat'
 
