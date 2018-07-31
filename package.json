@@ -30,16 +30,16 @@
   "dependencies": {
     "choo": "^6.8.0",
     "ecstatic": "^3.2.0",
-    "ipfs-css": "^0.2.0",
+    "ipfs-css": "^0.6.0",
     "tachyons": "^4.9.1",
     "window.ipfs-fallback": "^1.1.0"
   },
   "devDependencies": {
     "browserify": "^16.1.0",
     "npm-run-all": "^4.1.2",
-    "shx": "^0.2.2",
+    "shx": "^0.3.2",
     "standard": "^11.0.0",
-    "uglifyify": "^4.0.5",
+    "uglifyify": "^5.0.1",
     "watchify": "^3.10.0"
   },
   "repository": {
