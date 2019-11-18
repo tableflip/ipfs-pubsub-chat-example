@@ -35,6 +35,7 @@ function createChatStore () {
 
     emitter.on('DOMContentLoaded', async () => {
       ipfs = await getIpfs({
+        permissions: ['id', 'pubsub.publish', 'pubsub.subscribe'],
         ipfs: {
           config: {
             Addresses: {
